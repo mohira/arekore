@@ -1,0 +1,47 @@
+# pytest-cov
+.coverage
+
+# Packages
+# ---------------------------------------------------**
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+*.ftr
+
+# tmp
+tmp
+tmp.*
+
+# Python and Pycharm
+# ---------------------------------------------------**
+.idea
+__pycache__/*
+*.pyc
+.idea/
+.python-version
+.ipynb_checkpoints
+*.pickle
+.pytest_cache
+*.egg-info
+dist/
+
+# virtual env
+.venv/
+venv
+
+# macOS
+# ---------------------------------------------------**
+.DS_Store
+.DS_Store?
+
+# Others
+# ---------------------------------------------------**
+*.log
+*.sqlite
+*.sqlite3
+
