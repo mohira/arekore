@@ -43,3 +43,23 @@ def xy_specified_cor(r: float, n: int) -> Tuple[np.ndarray, np.ndarray]:
     assert abs(r_actual - r) < 1e-5, f'got={r_actual}, want={r}'
 
     return x, y
+
+
+def multi_values_specified_correlation(R: np.ndarray, n: int) -> np.ndarray:
+    """任意の相関行列をもつ多変量データからのサンプリング
+
+    標本相関行列が完全に一致するわけではないことに注意
+    """
+    if np.any(R > 1) or np.any(R < -1):
+        raise ValueError('相関行列なので -1<=r<=+1 じゃないとダメですよ')
+
+    if not np.allclose(R, R.T):
+        raise ValueError('与えられた相関行列が対称行列になっていません')
+
+    m = R.shape[0]  # 変数の数
+
+    L = np.linalg.cholesky(R).T
+
+    e = np.random.normal(size=(n, m))
+
+    return np.dot(e, L)

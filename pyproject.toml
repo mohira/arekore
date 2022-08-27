@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "arekore"
-version = "0.1.0"
+version = "0.2.0"
 description = "記述統計のためのクラスや可視化のあれこれ。ダミーデータも作れるよ。"
 authors = ["mohira"]
 homepage = "https://github.com/mohira"
